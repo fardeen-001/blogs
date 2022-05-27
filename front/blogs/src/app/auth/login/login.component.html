@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto border shadow p-5 mt-5">
+            <h1>Login</h1>
+            <form (submit)="login(loginForm)" #loginForm="ngForm">
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="email" #email name="email" ngModel class="form-control"  placeholder="Enter Username"/>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" #password name="password" ngModel class="form-control"  placeholder="Enter Password"/>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3">Submit</button>
+                    <button class="btn btn-dark mt-3 ms-3">Reset</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

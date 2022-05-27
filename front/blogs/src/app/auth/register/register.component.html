@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto border shadow p-5 mt-5">
+            <h1>Register</h1>
+            <form (submit)="register(registerForm)"   #registerForm="ngForm">
+                <div class="form-group">
+                    <label for="">FirstName</label>
+                    <input type="text" #firstname name="firstname" ngModel class="form-control"  placeholder="Enter FirstName"/>
+                </div>
+                <div class="form-group">
+                    <label for="">LastName</label>
+                    <input type="text" #lastname name="lastname" ngModel class="form-control"  placeholder="Enter Password"/>
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control"  #email name="email" ngModel placeholder="Enter Password"/>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="email" class="form-control" #password name="password" ngModel  placeholder="Enter Password"/>
+                </div>
+                <div class="form-group">
+                    <label for="">DOB</label>
+                    <input type="date" class="form-control"  #dob name="dob" ngModel placeholder="Enter Password"/>
+                </div>
+                <div class="form-group">
+                    <label for="">Role</label>
+                    <select name="" id="" class="form-select" #role name="role" ngModel>
+                        <option selected disabled>Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3">Submit</button>
+                    <button class="btn btn-dark mt-3 ms-3">Reset</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

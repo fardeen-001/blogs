@@ -1,0 +1,47 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "firstName ": "admin",
+      "lastName ": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin@123",
+      "dob": "12/06/2006",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "firstName ": "fardeen",
+      "lastName ": "khan",
+      "email": "fardeen@gmail.com",
+      "password": "faddy@123",
+      "dob": "12/06/2006",
+      "role": "user"
+    },
+    {
+      "firstname": "aman",
+      "lastname": "khan",
+      "email": "aman@gmail.cvom",
+      "password": "admin@123",
+      "dob": "2015-12-31",
+      "role": "admin",
+      "id": 3
+    }
+  ],
+  "blogs": [
+    {
+      "title": "dsaas",
+      "description": "asda",
+      "date": "12/06/2006",
+      "status": "done",
+      "id": 1
+    },
+    {
+      "title": "anothers",
+      "description": "asda",
+      "date": "12/06/2006",
+      "status": "done",
+      "id": 2
+    }
+  ]
+}

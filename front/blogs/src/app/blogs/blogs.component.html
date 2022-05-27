@@ -1,0 +1,124 @@
+<div class="row">
+    <div class="col-md-8 m-auto mt-3">
+        <div class="text-end">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Blogs</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Description</td>
+                    <td>Date</td>
+                    <td>Status</td>
+                    <td>Operation</td>
+                </tr> 
+            </thead>
+           <tbody *ngFor="let blog of blogss">
+            <tr >
+                <td>{{blog.title}}</td>
+                <td>{{blog.description}}</td>
+                <td>{{blog.date}}</td>
+                <td>{{blog.status}}</td>
+                <td>
+                    <button  (click)="editBlogs(blog.id)"   data-bs-toggle="modal" data-bs-target="#exampleModals" class="btn btn-primary" type="button" >
+                        Update
+                    </button>   
+                    <button   (click)="deleteBlogs(blog.id)"  class="btn btn-danger ">
+                        Delete
+                    </button>
+                </td>
+            </tr> 
+           </tbody>
+               
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form (submit)="saveBlogs(blogs)" #blogs="ngForm">
+                <div class="form-group">
+                    <label for="">Title</label>
+                    <input type="text" #title ngModel  name="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">description</label>
+                    <input type="text" #description ngModel name="description" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">date</label>
+                    <input type="text" #date ngModel name="date"  class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Status</label>
+                    <select name="status" #status ngModel id="" class="form-select">
+                        <option  selected disabled value="">Select status</option>
+                        <option value="done">Done</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-dark ms-3">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form (submit)="updateBlogs(blogsser)" #blogsser="ngForm">
+                <div class="form-group">
+                    <label for="">Title</label>
+                    <input type="text" #title ngModel  value="{{singleBlog.title}}" name="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">description</label>
+                    <input type="text" #description ngModel name="description" value="{{singleBlog.description}}" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">date</label>
+                    <input type="text" #date ngModel name="date" value="{{singleBlog.date}}" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Status</label>
+                    <select name="status" #status ngModel id="" class="form-select">
+                        <option  selected disabled value="">Select status</option>
+                        <option value="done">Done</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-dark ms-3">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
